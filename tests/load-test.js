@@ -1,7 +1,5 @@
 import http from 'k6/http'
-import { sleep } from 'k6'
 
 export default function () {
-  http.get('http://localhost:8080/api/long-task')
-  sleep(1)
-};
+  http.get('https://poli-microservice.herokuapp.com/api/long-task')
+}
