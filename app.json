@@ -1,0 +1,36 @@
+{
+  "name": "poli-microservice",
+  "scripts": {},
+  "env": {
+    "CLOUDAMQP_APIKEY": {
+      "required": true
+    },
+    "CLOUDAMQP_URL": {
+      "required": true
+    },
+    "LOG_CONCURRENCY": {
+      "required": true
+    },
+    "QUEUE_NAME": "dev-tasks",
+    "WEB_MEMORY": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    },
+    "worker": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "cloudamqp"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "stack": "heroku-18"
+}

@@ -4,6 +4,7 @@
   "description": "How to handle hundreds of request per seconds using a message broker",
   "scripts": {
     "start": "node src/web/index.js",
+    "startworker": "node src/worker/index.js",
     "dev": "nodemon src/web/index.js"
   },
   "keywords": [],
@@ -18,9 +19,11 @@
     "eslint-plugin-standard": "^4.0.1"
   },
   "dependencies": {
+    "amqplib": "^0.5.5",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "lodash.memoize": "^4.1.2",
     "morgan": "^1.9.1",
     "throng": "^4.0.0"
   }
