@@ -8,7 +8,7 @@ router
     res.json({ status: 'Async long task successfully executed' })
   })
   .get('/blocking-long-task', (req, res) => {
-    for (let i = 0; i < 200000000; i++) Math.random()
+    for (let i = 0; i < 2000000; i++) Math.random()
     res.json({ status: 'Blocking long task successfully executed' })
   })
   .post('/rabbit-long-task', async (req, res) => {
