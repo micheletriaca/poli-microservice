@@ -1,13 +1,9 @@
 const memoize = require('lodash.memoize')
 require('dotenv').config()
 
-const getAmqpConnection = memoize(async (version = 1) => {
-  const url = process.env.CLOUDAMQP_URL
-  const conn = await require('amqplib').connect(url)
-  const ok = await conn.createChannel()
-  conn.on('error', err => console.error('ERR22', err))
-  ok.on('error', err => console.error('ERRRR', err))
-  return ok
+const getAmqpConnection = memoize(async () => {
+  const conn = await require('amqplib').connect(process.env.CLOUDAMQP_URL)
+  return conn.createChannel()
 })
 
 let count = 0

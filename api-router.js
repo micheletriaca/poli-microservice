@@ -6,10 +6,8 @@ require('dotenv').config()
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 const getAmqpConnection = memoize(async () => {
-  const url = process.env.CLOUDAMQP_URL
-  const conn = await require('amqplib').connect(url)
-  const ok = await conn.createChannel()
-  return ok
+  const conn = await require('amqplib').connect(process.env.CLOUDAMQP_URL)
+  return conn.createChannel()
 })
 
 router
