@@ -1,8 +1,9 @@
 const { connectToRabbit } = require('../common/utils')
 const throng = require('throng')
+const WORKERS = process.env.WEB_CONCURRENCY || 1
 
 throng({
-  workers: 3,
+  workers: WORKERS,
   start: id => {
     console.log(`Started worker with id ${id}`)
     ;(async () => {
