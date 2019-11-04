@@ -10,7 +10,7 @@
     "dev": "nodemon src/web/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Michele Triaca",
   "license": "MIT",
   "devDependencies": {
     "eslint": "^6.6.0",
