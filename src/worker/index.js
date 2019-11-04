@@ -9,7 +9,7 @@ throng({
     ;(async () => {
       const ch = await connectToRabbit()
       ch.prefetch(10)
-      ch.consume('tasks', msg => {
+      ch.consume(process.env.QUEUE_NAME, msg => {
         for (let i = 0; i < 2000000; i++) Math.random()
         const jsonMsg = JSON.parse(msg.content.toString())
         console.log(`🥳 ${jsonMsg.name}`)
