@@ -1,9 +1,13 @@
 const express = require('express')
 const apiRouter = require('./api-router')
 const morgan = require('morgan')
+const bodyParser = require('body-parser')
 
 express()
   .use(morgan('tiny'))
+  .use(bodyParser.raw({
+    type: '*/*'
+  }))
   .get('/', (req, res) => {
     res.status(200).json({ res: 'UP AND RUNNING' })
   })
