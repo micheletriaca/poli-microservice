@@ -1,0 +1,9 @@
+What will we do:
+  ☐ Deploy example application to heroku
+  ☐ Load testing using k6.io
+  ☐ Improve performances using throng
+  ☐ Decouple api from long running task
+    ☐ Install CloudAMQP addon
+    ☐ Implement enqueing
+    ☐ Implenent worker to handle enqueued messages
+  ☐ Load test again
